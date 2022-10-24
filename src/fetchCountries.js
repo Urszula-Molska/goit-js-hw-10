@@ -32,17 +32,14 @@ export function fetchCountries(countryName) {
             }"/>
             <h1 class="country">${property.name.official}</h1></div>
             <h2>Capital: <span class= subtitle>${property.capital}</span><h2>
-            <h2>Population: <span class= subtitle>${
-              property.population
-            }</span><h2>
-
+            <h2>Population: <span class= subtitle>${property.population.toLocaleString()} people</span></h2>
             <h2>Languages:  <span class= subtitle>${Object.values(
               property.languages
-            )}</span><h2>
+            )}</span></h2>
             `;
           });
 
-          return countryInfo.insertAdjacentHTML('beforeend', markup);
+          return (countryInfo.innerHTML = markup);
         }
 
         if ((countries.length >= 2) & (countries.length <= 10)) {
@@ -53,7 +50,7 @@ export function fetchCountries(countryName) {
             <h2 class="country">${country.name.official}</h2>
             </div>`;
           });
-          return countryInfo.insertAdjacentHTML('beforeend', markup);
+          return (countryInfo.innerHTML = markup);
         }
       });
     })
