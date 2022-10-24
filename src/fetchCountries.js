@@ -35,8 +35,7 @@ export function fetchCountries(countryName) {
             <h2>Population: <span class= subtitle>${property.population.toLocaleString()} people</span></h2>
             <h2>Languages:  <span class= subtitle>${Object.values(
               property.languages
-            )}</span></h2>
-            `;
+            )}</span></h2>`;
           });
 
           return (countryInfo.innerHTML = markup);
